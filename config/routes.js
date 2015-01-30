@@ -9,7 +9,22 @@
 
 module.exports.routes = {
 
-  '/': 'LandingController.index',
-  '/flux': 'LandingController.flux',
+  //-------------------------------
+  // User controller 
+  //-------------------------------
+
+  '/landing': 'LandingController.index', //Landing View
+  '/': 'LandingController.flux', //Main Flux App
+
+  //-------------------------------
+  // User controller 
+  //-------------------------------
+
+  //Views
+  '/login':'UserController.login',
+  
+  //Auth
+  '/logout':'UserController.logout',
+  '/login/auth':'UserController.auth',
   
 };

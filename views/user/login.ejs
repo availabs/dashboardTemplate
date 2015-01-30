@@ -1,0 +1,66 @@
+<div class="single-widget-container">
+    <section class="widget login-widget">
+        <header class="text-align-center">
+            <fieldset>
+                <legend style="line-height:20px">Dashboard<br><small>Avail Labs</small></legend>
+            </fieldset>
+            <h4>Login to your account</h4>
+        </header>
+        <div class="body">
+            <% if(flash && flash.err) { %>
+                <ul class="alert alert-info">
+            <% Object.keys(flash.err).forEach(function(error) { %>
+                    <li><%- flash.err[error].message %></li>
+            <% }) %>
+                </ul>
+            <% } %>
+            <form action="/login/auth" method="POST" class="form-signin">
+                <fieldset>
+                    <div class="form-group">
+                       <!--  <label for="email">Username</label>-->
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            <input id="username" name="username" type="text" class="form-control input-lg"  placeholder="Username" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label for="password">Password</label>-->
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            <input id="password" name="password" type="password" class="form-control input-lg" placeholder="Password" />
+                        </div>
+
+                    </div>
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-block btn-lg btn-danger">
+                        <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                        <small>Sign In</small>
+                    </button>
+                    <div class="forgot"><!-- <a class="forgot" href="#">Forgot Username or Password?</a> --></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<style>
+/* Background is a work in progress */
+
+/*body {
+    background-color: rgba(74, 121, 147, 0.89);
+  background: radial-gradient(farthest-side ellipse at 10% 0, rgba(74, 121, 147, 0.89), rgba(226, 226, 226, 0.87), rgba(176,176,176, 0.87)), url("/img/bgnoise_lg_dark.png");
+  background: -webkit-radial-gradient(10% 0, farthest-side ellipse, rgba(74, 121, 147, 0.89), rgba(226, 226, 226, 0.87), rgba(176,176,176, 0.87)), url("/img/bgnoise_lg_dark.png");
+  background: -moz-radial-gradient(10% 0, farthest-side ellipse, rgba(74, 121, 147, 0.89), rgba(226, 226, 226, 0.87), rgba(176,176,176, 0.87)), url("/img/bgnoise_lg_dark.png");
+    background:url('/img/login_bg.jpg');
+    background-repeat:no-repeat;
+    background-attacment:fixed;
+    background-position:center;
+}*/
+</style>
